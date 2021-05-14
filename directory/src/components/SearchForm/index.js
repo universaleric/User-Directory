@@ -15,11 +15,6 @@ function SearchForm(props) {
           placeholder="Search"
           id="user"
         />
-        {/* <datalist id="user">
-          {props.user.map((user) => (
-            <option value={user} key={user} />
-          ))}
-        </datalist> */}
       </div>
     </form>
   );

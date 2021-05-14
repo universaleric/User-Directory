@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./components/Header/index";
 import Search from "./Search";
 
@@ -25,6 +26,3 @@ export default App;
 //state object will need input text, array of users, array of filtered users
 //every time search bar gets changed, it should update based on original array.
 //new filtered array will be created in handleInputChange().
-//
-
-//Question 1: JSX styling

@@ -2,14 +2,37 @@ import React from "react";
 import "./style.css";
 
 function SearchResults(props) {
+  let employees = props.results;
+  let employeeRow = employees.map((employee) => (
+    <tr key={employee.cell}>
+      <td>
+        <img
+          alt="User"
+          src={employee.picture.thumbnail}
+          className="img-fluid"
+        />
+      </td>
+      <td>{employee.name.first}</td>
+      <td>{employee.name.last}</td>
+      <td>{employee.cell}</td>
+      <td>{employee.email}</td>
+    </tr>
+  ));
   return (
-    <ul className="list-group search-results">
-      {props.results.map((result) => (
-        <li key={result} className="list-group-item">
-          <img alt="User" src={result} className="img-fluid" />
-        </li>
-      ))}
-    </ul>
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>{employeeRow}</tbody>
+      </table>
+    </div>
   );
 }
 

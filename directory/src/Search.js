@@ -13,7 +13,7 @@ class Search extends Component {
 
   componentDidMount() {
     API.getRandomUser()
-      .then((res) => this.setState({ results: res.data.message }))
+      .then((res) => this.setState({ results: res.data.results }))
       .catch((err) => console.log(err));
   }
 
@@ -25,8 +25,14 @@ class Search extends Component {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
-          <SearchForm handleInputChange={this.handleInputChange} />
-          <SearchResults results={this.state.results} />
+          <SearchForm
+            handleInputChange={this.handleInputChange}
+            search={this.state.search}
+          />
+          <SearchResults
+            search={this.state.search}
+            results={this.state.results}
+          />
         </Container>
       </div>
     );
