@@ -3,6 +3,13 @@ import "./style.css";
 
 function SearchResults(props) {
   let employees = props.results;
+  employees = employees.filter(
+    (employee) =>
+      employee.name.first.toLowerCase().includes(props.search.toLowerCase()) ===
+        true ||
+      employee.name.last.toLowerCase().includes(props.search.toLowerCase()) ===
+        true
+  );
   let employeeRow = employees.map((employee) => (
     <tr key={employee.cell}>
       <td>
