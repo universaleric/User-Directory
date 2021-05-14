@@ -31,8 +31,12 @@ function SearchResults(props) {
         <thead>
           <tr>
             <th scope="col">Photo</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
+            <th scope="col">
+              First Name<span onClick={props.sort}>🔽</span>
+            </th>
+            <th scope="col">
+              Last Name<span>🔽</span>
+            </th>
             <th scope="col">Phone Number</th>
             <th scope="col">Email</th>
           </tr>

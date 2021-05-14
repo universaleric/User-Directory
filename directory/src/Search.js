@@ -21,6 +21,22 @@ class Search extends Component {
     this.setState({ search: event.target.value });
   };
 
+  handleSort = () => {
+    let sortedResults = this.state.results;
+    sortedResults.sort(function (a, b) {
+      var nameA = a.name.first.toUpperCase();
+      var nameB = b.name.first.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
+    });
+  };
+
   render() {
     return (
       <div>
@@ -32,6 +48,7 @@ class Search extends Component {
           <SearchResults
             search={this.state.search}
             results={this.state.results}
+            sort={this.handleSort}
           />
         </Container>
       </div>
